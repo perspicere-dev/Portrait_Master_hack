@@ -76,6 +76,7 @@ exports.vote = async (req, res) => {
       await voter.save();
       photoToUpdate.votes++;
       photoToUpdate.save();
+      res.send({ message: 'OK' });
     }
       
     if(!photoToUpdate) res.status(404).json({ message: 'Not found' });
